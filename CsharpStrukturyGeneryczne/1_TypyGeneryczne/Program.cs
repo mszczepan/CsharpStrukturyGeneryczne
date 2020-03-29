@@ -32,6 +32,7 @@ namespace _1_TypyGeneryczne
                 
             }
 
+
         }
     }
 }
