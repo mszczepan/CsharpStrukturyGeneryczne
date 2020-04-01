@@ -11,38 +11,18 @@ namespace _2_KolekcjeGeneryczne
         static void Main(string[] args)
         {
 
-            Pracownik[] pracownicy = new Pracownik[]
-            {
-                new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" },
-                new Pracownik { Imie = "Jan", Nazwisko = "Nowak" },
-                new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" }
-            };
+            Queue<Pracownik> kolejka = new Queue<Pracownik>();
+            kolejka.Enqueue(new Pracownik { Imie = "Marcin", Nazwisko = "Nowak" });
+            kolejka.Enqueue(new Pracownik { Imie = "Tomek", Nazwisko = "Nowak" });
+            kolejka.Enqueue(new Pracownik { Imie = "Jacek", Nazwisko = "Nowak" });
+            kolejka.Enqueue(new Pracownik { Imie = "Ola", Nazwisko = "Nowak" });
 
-            foreach (var pracownik in pracownicy)
-            {
-                Console.WriteLine(pracownik.Imie+ " " +pracownik.Nazwisko);
 
+            while (kolejka.Count>0)
+            {
+                var  pracownik= kolejka.Dequeue();
+                Console.WriteLine(pracownik.Imie + " " + pracownik.Nazwisko);
             }
-
-            for (int i = 0; i < pracownicy.Length; i++)
-            {
-                Console.WriteLine(pracownicy[i].Imie + " " +pracownicy[i].Nazwisko);
-
-            }
-
-            Array.Resize(ref pracownicy,10);
-            
-            pracownicy[9] = new Pracownik { Imie = "Anatol", Nazwisko = "Koszyk" };
-
-
-            //Pracownik[] tab = new Pracownik[5];
-            //Pracownik pracownicol = new Pracownik();
-            //pracownicol.Imie = "Mrarek";
-
-            //tab[0] = pracownicol;
-
-            //Console.WriteLine(tab[0].Imie);
-
         }       
     }
 }
