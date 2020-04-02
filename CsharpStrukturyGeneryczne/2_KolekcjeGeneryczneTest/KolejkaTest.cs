@@ -64,7 +64,7 @@ namespace _2_KolekcjeGeneryczneTest
             kolejka.Clear();
        
             Assert.AreEqual(0, kolejka.Count);
-
+            
 
         }
 

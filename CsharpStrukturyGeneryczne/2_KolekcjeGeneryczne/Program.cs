@@ -18,7 +18,7 @@ namespace _2_KolekcjeGeneryczne
 
         private static void HashSet()
         {
-            HashSet<int> set = new HashSet<int>;
+            HashSet<int> set = new HashSet<int>();
 
             set.Add(1);
             set.Add(2);
