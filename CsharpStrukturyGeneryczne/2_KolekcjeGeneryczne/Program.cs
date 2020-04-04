@@ -14,7 +14,25 @@ namespace _2_KolekcjeGeneryczne
             //Stos();
             //HashSet();
             //LinkedList();
+            //LinkedList2();
+            Dictionary<string, Pracownik> pracownicy = new Dictionary<string, Pracownik>();
+            pracownicy.Add("Nowak", new Pracownik { Nazwisko = "Nowak" });
+            pracownicy.Add("Kowal", new Pracownik { Nazwisko = "Kowal" });
+            pracownicy.Add("Kaczor", new Pracownik { Nazwisko = "Kaczor" });
+         
 
+            var kowal = pracownicy["Kowal"];
+
+            foreach (var pracownik in pracownicy)
+            {
+
+                Console.WriteLine("{0}:{1}",pracownik.Key, pracownik.Value.Nazwisko);
+            }
+
+        }
+
+        private static void LinkedList2()
+        {
             LinkedList<int> list = new LinkedList<int>();
             list.AddFirst(5);
             list.AddFirst(6);
@@ -35,7 +53,6 @@ namespace _2_KolekcjeGeneryczne
                 wezel = wezel.Next;
 
             }
-
         }
 
         private static void LinkedList()
