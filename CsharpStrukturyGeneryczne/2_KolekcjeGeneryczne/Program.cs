@@ -15,20 +15,56 @@ namespace _2_KolekcjeGeneryczne
             //HashSet();
             //LinkedList();
             //LinkedList2();
+            //Dictionary();
+            //DictionaryAdvance();
+
+        }
+
+        private static void DictionaryAdvance()
+        {
+            var pracownicy = new Dictionary<string, List<Pracownik>>();
+            pracownicy.Add("Ksiegowosc", new List<Pracownik>() { new Pracownik { Nazwisko = "Nowak" } ,
+                                                                 new Pracownik { Nazwisko = "Kowal" },
+                                                                 new Pracownik { Nazwisko = "KAczor" } });
+            //...
+
+
+            pracownicy["Ksiegowosc"].Add(new Pracownik { Nazwisko = "Nowak" });
+
+            pracownicy.Add("Informatyka", new List<Pracownik>() { new Pracownik {Nazwisko= "Kowalski" },
+                                                                  new Pracownik { Nazwisko= "Bogacki"  }  });
+
+            foreach (var item in pracownicy)
+            {
+                Console.WriteLine(item.Key);
+                foreach (var pracownik in item.Value)
+                {
+                    Console.WriteLine("{0}:{1}", item.Key, pracownik.Nazwisko);
+                }
+            }
+
+            Console.WriteLine("Pracownicy z Księgowości");
+            foreach (var item in pracownicy["Ksiegowosc"])
+            {
+                Console.WriteLine(item.Nazwisko);
+            }
+        }
+
+        private static void Dictionary()
+        {
             Dictionary<string, Pracownik> pracownicy = new Dictionary<string, Pracownik>();
             pracownicy.Add("Nowak", new Pracownik { Nazwisko = "Nowak" });
             pracownicy.Add("Kowal", new Pracownik { Nazwisko = "Kowal" });
             pracownicy.Add("Kaczor", new Pracownik { Nazwisko = "Kaczor" });
-         
+
 
             var kowal = pracownicy["Kowal"];
 
             foreach (var pracownik in pracownicy)
             {
 
-                Console.WriteLine("{0}:{1}",pracownik.Key, pracownik.Value.Nazwisko);
+                Console.WriteLine("{0}:{1}", pracownik.Key, pracownik.Value.Nazwisko);
             }
-
         }
 
         private static void LinkedList2()
