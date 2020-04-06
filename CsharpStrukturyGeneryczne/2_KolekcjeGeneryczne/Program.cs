@@ -18,8 +18,32 @@ namespace _2_KolekcjeGeneryczne
             //Dictionary();
             //DictionaryAdvance();
 
-        }
+            var pracwonicy = new SortedDictionary<string, List<Pracownik>>();
+            pracwonicy.Add("Sprzedaż", new List<Pracownik> { new Pracownik { Imie = "Jan",Nazwisko="Kowal" },
+                                                             new Pracownik { Imie = "Tomek",Nazwisko="Nowak" },
+                                                             new Pracownik { Imie = "Marcin",Nazwisko="Bien" },
+                                                           });
 
+            pracwonicy.Add("Informatyka", new List<Pracownik> { new Pracownik { Imie = "Marcin", Nazwisko = "Kowal" },
+                                                                new Pracownik { Imie = "Tomek", Nazwisko = "Wróbel" },
+                                                              });
+
+            
+            pracwonicy.Add("Księgowość", new List<Pracownik> { new Pracownik { Imie = "Olek",Nazwisko="Kowalski" },
+                                                             new Pracownik { Imie = "Bartek",Nazwisko="Nawrocko" },
+                                                             new Pracownik { Imie = "Jurek",Nazwisko="Pytel" },
+                                                           });
+
+
+
+            foreach (var item in pracwonicy)
+            {
+                Console.WriteLine("Ilosc pracwoników w dziale {0} wynosi {1} ",item.Key,item.Value.Count);
+            }
+
+
+
+        } 
         private static void DictionaryAdvance()
         {
             var pracownicy = new Dictionary<string, List<Pracownik>>();
