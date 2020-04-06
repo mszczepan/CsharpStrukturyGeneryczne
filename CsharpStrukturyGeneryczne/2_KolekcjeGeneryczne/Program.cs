@@ -17,8 +17,30 @@ namespace _2_KolekcjeGeneryczne
             //LinkedList2();
             //Dictionary();
             //DictionaryAdvance();
+            SortedDictionary();
 
-            var pracwonicy = new SortedDictionary<string, List<Pracownik>>();
+            //SortedList();
+
+        }
+
+        private static void SortedList()
+        {
+            var listaPosortowana = new SortedList<int, string>();
+
+            listaPosortowana.Add(3, "trzy");
+            listaPosortowana.Add(1, "jeden");
+            listaPosortowana.Add(4, "cztery");
+            listaPosortowana.Add(2, "dwa");
+
+            foreach (var item in listaPosortowana)
+            {
+                Console.WriteLine(item.Value);
+            }
+        }
+
+        private static void SortedDictionary()
+        {
+            var pracwonicy = new SortedList<string, List<Pracownik>>();
             pracwonicy.Add("Sprzedaż", new List<Pracownik> { new Pracownik { Imie = "Jan",Nazwisko="Kowal" },
                                                              new Pracownik { Imie = "Tomek",Nazwisko="Nowak" },
                                                              new Pracownik { Imie = "Marcin",Nazwisko="Bien" },
@@ -28,7 +50,7 @@ namespace _2_KolekcjeGeneryczne
                                                                 new Pracownik { Imie = "Tomek", Nazwisko = "Wróbel" },
                                                               });
 
-            
+
             pracwonicy.Add("Księgowość", new List<Pracownik> { new Pracownik { Imie = "Olek",Nazwisko="Kowalski" },
                                                              new Pracownik { Imie = "Bartek",Nazwisko="Nawrocko" },
                                                              new Pracownik { Imie = "Jurek",Nazwisko="Pytel" },
@@ -38,12 +60,10 @@ namespace _2_KolekcjeGeneryczne
 
             foreach (var item in pracwonicy)
             {
-                Console.WriteLine("Ilosc pracwoników w dziale {0} wynosi {1} ",item.Key,item.Value.Count);
+                Console.WriteLine("Ilosc pracwoników w dziale {0} wynosi {1} ", item.Key, item.Value.Count);
             }
+        }
 
-
-
-        } 
         private static void DictionaryAdvance()
         {
             var pracownicy = new Dictionary<string, List<Pracownik>>();
