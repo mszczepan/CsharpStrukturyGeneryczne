@@ -68,7 +68,7 @@ namespace _2_KolekcjeGeneryczneTest
             mapa.Add("two", "dwa");
             mapa.Add("tree", "trzy");
 
-            mapa.Clear();
+           // mapa.Clear();
             Assert.AreEqual("jeden", mapa["one"]);
 
         }

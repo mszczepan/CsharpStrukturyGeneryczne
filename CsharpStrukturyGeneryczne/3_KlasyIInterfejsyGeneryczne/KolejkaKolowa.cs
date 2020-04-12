@@ -1,70 +1,36 @@
 ﻿namespace _3_KlasyIInterfejsyGeneryczne
 {
 
-    public class KolejkaKolowa<T> : IKolejka<T>
+    public class KolejkaKolowa<T> : DuzaKolejka<T>
     {
-        private T[] buffor;
-        private int poczatekBufora;
-        private int koniecBufora;
-        public KolejkaKolowa() : this(pojemnosc: 5)
+        private int _pojemnosc;
+
+        public KolejkaKolowa(int pojemnosc=5)
         {
-
-        }
-
-        public KolejkaKolowa(int pojemnosc)
-        {
-            buffor = new T[pojemnosc + 1];
-            poczatekBufora = 0;
-            koniecBufora = 0;
-
+            _pojemnosc = pojemnosc;
         }
 
 
-        public void Zapisz(T wartosc)
+        public override void Zapisz(T wartosc)
         {
-            buffor[koniecBufora] = wartosc;
-            koniecBufora = (koniecBufora + 1) % buffor.Length;
-
-            if (koniecBufora == poczatekBufora)
-                poczatekBufora = (poczatekBufora + 1) % buffor.Length;
-
-        }
-
-        public T Czytaj()
-        {
-            var wynik = buffor[poczatekBufora];
-            poczatekBufora = (poczatekBufora + 1) % buffor.Length;
-            return wynik;
-        }
-
-        public int Pojemnosc
-        {
-            get
+            base.Zapisz(wartosc);
+            if (kolejka.Count>_pojemnosc)
             {
-                return buffor.Length;
-            }
-        }
-
-
-
-        public bool JestPusty
-        {
-            get
-            {
-
-                return koniecBufora == poczatekBufora;
+                kolejka.Dequeue();
             }
 
         }
 
-        public bool JestPelny
+        public override bool JestPelny
         {
-            get
+            get 
             {
-                return (koniecBufora + 1) % buffor.Length == poczatekBufora;
-            }
-
-
+              return  kolejka.Count == _pojemnosc;
+            
+            } 
         }
+
+
     }
+
 }
